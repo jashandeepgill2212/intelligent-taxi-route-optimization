@@ -13,7 +13,7 @@
 - **Jashandeep Singh** (Roll No: 72510438)
 - **Harshpreet Singh Malhi** (Roll No: 72520287)
 - **Project Type**: B.Tech CSE / AI&DS Major Project
-
+PPT-https://docs.google.com/presentation/d/1lRiJdChxKzSxbiDf8_JMM3HKXogoFIZ7/edit?usp=drive_link&ouid=101115675166531428876&rtpof=true&sd=true
 ---
 
 ## 1. Project Overview
