@@ -1,0 +1,43 @@
+version: '3.8'
+
+services:
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
+    environment:
+      - API_HOST=0.0.0.0
+      - API_PORT=8000
+      - DATABASE_URL=postgresql://taxi_user:taxi_password@db:5432/taxiroute_db
+    volumes:
+      - ./ml/checkpoints:/app/ml/checkpoints
+      - ./ml/data:/app/ml/data
+    depends_on:
+      - db
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    environment:
+      - NEXT_PUBLIC_API_URL=http://localhost:8000
+    depends_on:
+      - backend
+
+  db:
+    image: postgis/postgis:15-3.3
+    environment:
+      POSTGRES_USER: taxi_user
+      POSTGRES_PASSWORD: taxi_password
+      POSTGRES_DB: taxiroute_db
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:
