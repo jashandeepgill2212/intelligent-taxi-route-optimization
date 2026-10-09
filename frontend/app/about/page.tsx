@@ -20,16 +20,21 @@ export default function AboutPage() {
         <h2 className="text-lg font-bold text-white flex items-center gap-2">
           <Users className="w-5 h-5 text-sky-400" /> Project Team
         </h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 text-sm">
           <div className="bg-slate-950 p-4 rounded-xl border border-slate-800">
             <span className="text-xs text-slate-500 uppercase block font-semibold">Team Member 1</span>
             <strong className="text-lg text-white font-bold block mt-1">Jashandeep Singh</strong>
-            <span className="text-sky-400 text-xs font-mono">Roll No: 72510438</span>
+            <span className="text-sky-400 text-xs font-mono">Reg No: 72510438</span>
           </div>
           <div className="bg-slate-950 p-4 rounded-xl border border-slate-800">
             <span className="text-xs text-slate-500 uppercase block font-semibold">Team Member 2</span>
             <strong className="text-lg text-white font-bold block mt-1">Harshpreet Singh Malhi</strong>
-            <span className="text-sky-400 text-xs font-mono">Roll No: 72520287</span>
+            <span className="text-sky-400 text-xs font-mono">Reg No: 72520287</span>
+          </div>
+          <div className="bg-slate-950 p-4 rounded-xl border border-slate-800">
+            <span className="text-xs text-slate-500 uppercase block font-semibold">Team Member 3</span>
+            <strong className="text-lg text-white font-bold block mt-1">Bhanu Partap Singh Dalal</strong>
+            <span className="text-sky-400 text-xs font-mono">Reg No: 72510134</span>
           </div>
         </div>
       </div>

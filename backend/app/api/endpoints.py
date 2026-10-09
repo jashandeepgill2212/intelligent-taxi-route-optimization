@@ -16,7 +16,7 @@ def health_check():
         "status": "healthy",
         "service": "TaxiRoute RL Backend API",
         "version": "1.0.0",
-        "team": ["Jashandeep Singh (72510438)", "Harshpreet Singh Malhi (72520287)"]
+        "team": ["Jashandeep Singh (72510438)", "Harshpreet Singh Malhi (72520287)", "Bhanu Partap Singh Dalal (72510134)"]
     }
 
 

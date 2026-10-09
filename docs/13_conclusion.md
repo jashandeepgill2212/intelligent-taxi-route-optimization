@@ -10,4 +10,5 @@ This major project successfully designed, implemented, and benchmarked an intell
 Submitted by:
 - **Jashandeep Singh (72510438)**
 - **Harshpreet Singh Malhi (72520287)**
+- **Bhanu Partap Singh Dalal (72510134)**
 Department of Computer Science & Engineering / Artificial Intelligence & Data Science.

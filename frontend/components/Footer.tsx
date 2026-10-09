@@ -11,6 +11,7 @@ export default function Footer() {
         <div className="text-xs text-right">
           <p><span className="text-sky-400 font-medium">Jashandeep Singh</span> (72510438)</p>
           <p><span className="text-sky-400 font-medium">Harshpreet Singh Malhi</span> (72520287)</p>
+          <p><span className="text-sky-400 font-medium">Bhanu Partap Singh Dalal</span> (72510134)</p>
         </div>
       </div>
     </footer>
