@@ -35,7 +35,7 @@
 10. [Developed By](#10-developed-by)
 11. [Learning Outcomes](#11-learning-outcomes)
 12. [Conclusion](#12-conclusion)
->>>>>>> 80e3914 (Update project README and add team member Bhanu Partap Singh Dalal)
+
 ---
 
 ## 1. Project Overview
