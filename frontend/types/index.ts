@@ -3,6 +3,13 @@ export interface LocationPoint {
   lng: number;
 }
 
+export interface LocationSearchResult {
+  name: string;
+  display_name: string;
+  latitude: number;
+  longitude: number;
+}
+
 export interface RouteCoordinate {
   lat: number;
   lng: number;
@@ -13,6 +20,7 @@ export interface RouteResponse {
   algorithm: string;
   success: boolean;
   error?: string;
+  graph_source?: string;
   route_nodes: number[];
   route_coordinates: RouteCoordinate[];
   total_distance_km: number;
@@ -27,6 +35,7 @@ export interface RouteResponse {
 export interface ComparisonResponse {
   source: { lat: number; lng: number; node_id: number };
   destination: { lat: number; lng: number; node_id: number };
+  graph_source?: string;
   optimization_objective: string;
   recommended_algorithm: string;
   explanation: string;
@@ -36,6 +45,7 @@ export interface ComparisonResponse {
 export interface GraphStatusResponse {
   city_name: string;
   is_synthetic: boolean;
+  source_type?: string;
   num_nodes: number;
   num_edges: number;
   current_traffic_level: string;

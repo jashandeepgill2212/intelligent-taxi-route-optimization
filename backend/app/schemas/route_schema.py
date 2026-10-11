@@ -7,6 +7,14 @@ class LocationPoint(BaseModel):
     lng: float = Field(..., example=75.8573, description="Longitude coordinate")
 
 
+class LocationSearchResult(BaseModel):
+    """Represents a single geocoding result returned by the location search endpoint."""
+    name: str
+    display_name: str
+    latitude: float
+    longitude: float
+
+
 class RouteRequest(BaseModel):
     source: LocationPoint
     destination: LocationPoint
@@ -24,6 +32,7 @@ class RouteResponse(BaseModel):
     algorithm: str
     success: bool
     error: Optional[str] = None
+    graph_source: str = "SYNTHETIC SIMULATION"
     route_nodes: List[int] = []
     route_coordinates: List[RouteCoordinate] = []
     total_distance_km: float = 0.0
@@ -38,6 +47,7 @@ class RouteResponse(BaseModel):
 class ComparisonResponse(BaseModel):
     source: Dict[str, Any]
     destination: Dict[str, Any]
+    graph_source: str = "SYNTHETIC SIMULATION"
     optimization_objective: str
     recommended_algorithm: str
     explanation: str
@@ -52,6 +62,7 @@ class TrainingStartRequest(BaseModel):
 class GraphStatusResponse(BaseModel):
     city_name: str
     is_synthetic: bool
+    source_type: str = "SYNTHETIC SIMULATION"
     num_nodes: int
     num_edges: int
     current_traffic_level: str

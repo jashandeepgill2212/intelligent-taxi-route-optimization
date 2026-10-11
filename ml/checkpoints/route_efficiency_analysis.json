@@ -1,0 +1,112 @@
+[
+  {
+    "id": 1,
+    "name": "Dashboard: Gill Rd -> Ludhiana Junction",
+    "success": true,
+    "dijkstra": {
+      "dist_km": 14.11,
+      "steps": 411,
+      "revisits": 0
+    },
+    "dqn": {
+      "dist_km": 52.14,
+      "steps": 1066,
+      "ratio_vs_dijkstra": 3.7,
+      "revisits": 96,
+      "unique_nodes": 971,
+      "max_revisits_single_node": 3,
+      "nodes_revisited_count": 94,
+      "initial_direct_km": 10.68,
+      "min_rem_km": 0.0,
+      "max_rem_km": 14.05
+    }
+  },
+  {
+    "id": 2,
+    "name": "Ludhiana City Center -> Ludhiana Junction",
+    "success": true,
+    "dijkstra": {
+      "dist_km": 8.4,
+      "steps": 279,
+      "revisits": 0
+    },
+    "dqn": {
+      "dist_km": 27.91,
+      "steps": 471,
+      "ratio_vs_dijkstra": 3.32,
+      "revisits": 13,
+      "unique_nodes": 459,
+      "max_revisits_single_node": 2,
+      "nodes_revisited_count": 13,
+      "initial_direct_km": 4.8,
+      "min_rem_km": 0.0,
+      "max_rem_km": 6.36
+    }
+  },
+  {
+    "id": 20,
+    "name": "Random Test Pair 8 (7.2 km)",
+    "success": true,
+    "dijkstra": {
+      "dist_km": 5.13,
+      "steps": 147,
+      "revisits": 0
+    },
+    "dqn": {
+      "dist_km": 20.89,
+      "steps": 500,
+      "ratio_vs_dijkstra": 4.07,
+      "revisits": 38,
+      "unique_nodes": 463,
+      "max_revisits_single_node": 3,
+      "nodes_revisited_count": 37,
+      "initial_direct_km": 3.82,
+      "min_rem_km": 0.0,
+      "max_rem_km": 3.83
+    }
+  },
+  {
+    "id": 29,
+    "name": "Random Test Pair 17 (4.2 km)",
+    "success": true,
+    "dijkstra": {
+      "dist_km": 11.74,
+      "steps": 284,
+      "revisits": 0
+    },
+    "dqn": {
+      "dist_km": 13.68,
+      "steps": 304,
+      "ratio_vs_dijkstra": 1.17,
+      "revisits": 0,
+      "unique_nodes": 305,
+      "max_revisits_single_node": 1,
+      "nodes_revisited_count": 0,
+      "initial_direct_km": 5.18,
+      "min_rem_km": 0.0,
+      "max_rem_km": 5.86
+    }
+  },
+  {
+    "id": 30,
+    "name": "Random Test Pair 18 (3.6 km)",
+    "success": true,
+    "dijkstra": {
+      "dist_km": 15.86,
+      "steps": 422,
+      "revisits": 0
+    },
+    "dqn": {
+      "dist_km": 18.72,
+      "steps": 509,
+      "ratio_vs_dijkstra": 1.18,
+      "revisits": 0,
+      "unique_nodes": 510,
+      "max_revisits_single_node": 1,
+      "nodes_revisited_count": 0,
+      "initial_direct_km": 11.1,
+      "min_rem_km": 0.0,
+      "max_rem_km": 12.1
+    }
+  }
+]

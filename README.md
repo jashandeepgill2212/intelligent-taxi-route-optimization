@@ -8,7 +8,6 @@
 
 ---
 
-<<<<<<< HEAD
 ## 👥 Team Members
 
 - **Jashandeep Singh** (Roll No: 72510438)
@@ -21,7 +20,21 @@
 
 ---
 
+## 📚 Academic Project Documentation & Thesis Deliverables
+
+The complete B.Tech project thesis documentation, experimental logs, and demonstration guides are finalized and available in the repository root:
+
+- 📄 [**FINAL_PROJECT_REPORT.md**](FINAL_PROJECT_REPORT.md): Comprehensive 25-section major project report covering mathematical formulations, Bellman optimality, ALT landmark potential-based reward shaping, ablation studies, and evaluation ethics.
+- 📊 [**FINAL_RESULTS.md**](FINAL_RESULTS.md): Complete held-out 30-pair benchmark analysis, route-level metrics, failure case breakdowns, and historical progression tables.
+- 🎯 [**DEMO_GUIDE.md**](DEMO_GUIDE.md): 5–7 minute evaluator walkthrough script, live interactive demo coordinates, fallback strategy, and anticipated Q&A.
+- ✅ [**FINAL_SUBMISSION_CHECKLIST.md**](FINAL_SUBMISSION_CHECKLIST.md): Code reproducibility, artifact preservation, test suite logs, and academic submission checklist.
+- 🔍 [**FINALIZATION_AUDIT.md**](FINALIZATION_AUDIT.md): Official technical verification log, cryptographic SHA-256 signatures, and discrepancy reconciliation proofs.
+
+---
+
 ## Table of Contents
+
+0. [Academic Thesis Deliverables](#-academic-project-documentation--thesis-deliverables)
 
 1. [Project Overview](#1-project-overview)
 2. [Problem Statement](#2-problem-statement)

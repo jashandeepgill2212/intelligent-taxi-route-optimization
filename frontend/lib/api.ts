@@ -1,5 +1,6 @@
 import {
   LocationPoint,
+  LocationSearchResult,
   RouteResponse,
   ComparisonResponse,
   GraphStatusResponse,
@@ -55,5 +56,19 @@ export async function startDqnTraining(episodes: number = 150, batchSize: number
 
 export async function fetchTrainingStatus(): Promise<TrainingStatusResponse> {
   const res = await fetch(`${API_BASE_URL}/training/status`);
+  return res.json();
+}
+
+export async function searchLocations(query: string, signal?: AbortSignal): Promise<LocationSearchResult[]> {
+  const trimmed = query.trim();
+  if (!trimmed || trimmed.length < 2) {
+    return [];
+  }
+  const url = `${API_BASE_URL}/locations/search?q=${encodeURIComponent(trimmed)}`;
+  const res = await fetch(url, { signal });
+  if (!res.ok) {
+    const errorData = await res.json().catch(() => ({ detail: 'Location search failed' }));
+    throw new Error(errorData.detail || `Location search failed with status ${res.status}`);
+  }
   return res.json();
 }

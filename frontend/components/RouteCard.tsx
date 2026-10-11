@@ -46,7 +46,18 @@ export default function RouteCard({ algorithm, routeData, isRecommended }: Route
 
       <div className="flex justify-between items-start mb-4">
         <div>
-          <h3 className="text-xl font-bold text-white tracking-wide">{algorithm}</h3>
+          <div className="flex items-center space-x-2">
+            <h3 className="text-xl font-bold text-white tracking-wide">{algorithm}</h3>
+            {routeData.graph_source && (
+              <span className={`text-[10px] font-semibold px-2 py-0.5 rounded uppercase tracking-wider ${
+                routeData.graph_source.includes('REAL')
+                  ? 'bg-emerald-950 text-emerald-300 border border-emerald-800'
+                  : 'bg-amber-950 text-amber-300 border border-amber-800'
+              }`}>
+                {routeData.graph_source.includes('REAL') ? 'REAL ROAD' : 'SIMULATION'}
+              </span>
+            )}
+          </div>
           <span className="text-xs text-slate-400">
             Efficiency: <strong className="text-sky-400">{routeData.route_efficiency_pct}%</strong>
           </span>

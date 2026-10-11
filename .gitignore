@@ -17,11 +17,13 @@ env/
 .env.local
 .env.*.local
 
-# ML artifacts
-*.pt
+# Scratch & temporary test artifacts
+scratch/
+ml/data/osm_cache/test_alt_*.json
+
+# Other ML artifacts
 *.pth
 *.ckpt
-checkpoints/
 
 # IDE / OS
 .vscode/

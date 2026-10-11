@@ -11,7 +11,7 @@ from typing import Tuple, List, Dict, Any, Optional
 class QNetwork(nn.Module):
     """Deep Q-Network MLP Architecture."""
 
-    def __init__(self, state_dim: int = 8, action_dim: int = 8, hidden_dim: int = 128):
+    def __init__(self, state_dim: int = 12, action_dim: int = 8, hidden_dim: int = 128):
         super(QNetwork, self).__init__()
         self.net = nn.Sequential(
             nn.Linear(state_dim, hidden_dim),
@@ -55,9 +55,9 @@ class DQNAgent:
     DQN Agent with Action Masking, Target Network Updates, and Replay Buffer.
     """
 
-    def __init__(self, state_dim: int = 8, action_dim: int = 8, hidden_dim: int = 128,
-                 lr: float = 1e-3, gamma: float = 0.99, epsilon_start: float = 1.0,
-                 epsilon_min: float = 0.05, epsilon_decay: float = 0.995,
+    def __init__(self, state_dim: int = 12, action_dim: int = 8, hidden_dim: int = 128,
+                 lr: float = 1e-3, gamma: float = 0.995, epsilon_start: float = 1.0,
+                 epsilon_min: float = 0.05, epsilon_decay: float = 0.985,
                  device: str = "cpu"):
         self.state_dim = state_dim
         self.action_dim = action_dim

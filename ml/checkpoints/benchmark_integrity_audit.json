@@ -1,0 +1,28 @@
+{
+  "timestamp": "2026-10-11T16:44:00+05:30",
+  "audit_version": "1.0",
+  "graph_nodes": 12675,
+  "graph_edges": 20324,
+  "graph_scc": 1,
+  "total_benchmark_pairs": 30,
+  "validation_pairs_count": 8,
+  "triangle_inequality_violations": 0,
+  "findings": {
+    "identical_endpoints": true,
+    "identical_snapped_nodes": true,
+    "identical_graph_and_weights": true,
+    "consistent_units_km": true,
+    "actual_geographic_road_lengths": true,
+    "directed_edges_respected": true,
+    "consistent_ratio_formula": true,
+    "failed_routes_isolated_from_ratio": true,
+    "stale_metadata_detected": true,
+    "stale_metadata_details": "In benchmark_dataset.py, pairs 13-30 had hardcoded 'direct_dist_km' metadata inherited from earlier synthetic runs that did not match the true haversine distance between source_node and dest_node. For pairs 20 and 24, this caused an apparent anomaly where Dijkstra distance was less than the stored metadata direct distance, even though Dijkstra distance was strictly greater than the true haversine distance. Evaluation distance ratios were unaffected because they divide by true Dijkstra road distance."
+  },
+  "route_efficiency_diagnosis": {
+    "clean_routes_ratio": "1.17x - 1.18x (0 revisits, direct open corridor)",
+    "detoured_routes_ratio": "3.32x - 4.07x (revisits and wide detours)",
+    "root_cause_1": "60-step recency window in action masking allows loops after 60 steps in large city-scale detours",
+    "root_cause_2": "Euclidean / Haversine distance progress reward causes positive gradient towards topological barriers (railways/rivers) that lack immediate crossings, inducing cul-de-sac exploration"
+  }
+}

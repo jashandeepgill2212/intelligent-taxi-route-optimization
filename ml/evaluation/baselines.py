@@ -85,6 +85,7 @@ class BaselineRouter:
         return {
             'algorithm': algorithm,
             'success': True,
+            'graph_source': getattr(self.rng, 'source_type', 'SYNTHETIC SIMULATION'),
             'route_nodes': path_nodes,
             'route_coordinates': route_coordinates,
             'total_distance_km': round(total_distance_km, 2),
@@ -101,6 +102,7 @@ class BaselineRouter:
         return {
             'algorithm': algorithm,
             'success': False,
+            'graph_source': getattr(self.rng, 'source_type', 'SYNTHETIC SIMULATION'),
             'error': f"No valid path exists between node {source_node} and node {dest_node}.",
             'route_nodes': [],
             'route_coordinates': [],

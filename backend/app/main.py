@@ -2,6 +2,7 @@ import os
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from backend.app.api.endpoints import router as api_router
+from backend.app.api.locations import router as locations_router
 
 app = FastAPI(
     title="TaxiRoute RL — Intelligent Route Optimization API",
@@ -25,6 +26,7 @@ app.add_middleware(
 )
 
 app.include_router(api_router)
+app.include_router(locations_router)
 
 
 if __name__ == "__main__":

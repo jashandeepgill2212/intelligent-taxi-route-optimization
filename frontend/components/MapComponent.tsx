@@ -6,6 +6,8 @@ import { LocationPoint, RouteCoordinate, RouteResponse } from '../types';
 interface MapComponentProps {
   pickup: LocationPoint;
   destination: LocationPoint;
+  pickupLabel?: string;
+  destinationLabel?: string;
   onSelectPickup: (loc: LocationPoint) => void;
   onSelectDestination: (loc: LocationPoint) => void;
   routes?: Record<string, RouteResponse>;
@@ -15,6 +17,8 @@ interface MapComponentProps {
 export default function MapComponent({
   pickup,
   destination,
+  pickupLabel,
+  destinationLabel,
   onSelectPickup,
   onSelectDestination,
   routes,
@@ -35,7 +39,16 @@ export default function MapComponent({
   }
 
   // Client-side Leaflet Container
-  const LeafletContainer = dynamicLeafletMap(pickup, destination, onSelectPickup, onSelectDestination, routes, recommended_algorithm);
+  const LeafletContainer = dynamicLeafletMap(
+    pickup,
+    destination,
+    onSelectPickup,
+    onSelectDestination,
+    pickupLabel,
+    destinationLabel,
+    routes,
+    recommended_algorithm
+  );
 
   return <div className="w-full h-[500px] rounded-xl overflow-hidden shadow-2xl border border-slate-800">{LeafletContainer}</div>;
 }
@@ -45,6 +58,8 @@ function dynamicLeafletMap(
   destination: LocationPoint,
   onSelectPickup: (loc: LocationPoint) => void,
   onSelectDestination: (loc: LocationPoint) => void,
+  pickupLabel?: string,
+  destinationLabel?: string,
   routes?: Record<string, RouteResponse>,
   recommended_algorithm?: string
 ) {
@@ -59,7 +74,7 @@ function dynamicLeafletMap(
     shadowUrl: 'https://unpkg.com/leaflet@1.9.4/dist/images/marker-shadow.png',
   });
 
-  const { MapContainer, TileLayer, Marker, Popup, Polyline, useMapEvents } = require('react-leaflet');
+  const { MapContainer, TileLayer, Marker, Popup, Polyline, useMap, useMapEvents } = require('react-leaflet');
 
   function LocationSelector() {
     const [clickMode, setClickMode] = useState<'pickup' | 'dest'>('pickup');
@@ -75,6 +90,14 @@ function dynamicLeafletMap(
         }
       },
     });
+    return null;
+  }
+
+  function MapRecenter({ targetCenter }: { targetCenter: [number, number] }) {
+    const map = useMap();
+    useEffect(() => {
+      map.setView(targetCenter, map.getZoom());
+    }, [targetCenter[0], targetCenter[1]]);
     return null;
   }
 
@@ -94,14 +117,21 @@ function dynamicLeafletMap(
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
       />
       <LocationSelector />
+      <MapRecenter targetCenter={center} />
 
       {/* Pickup Marker */}
       <Marker position={[pickup.lat, pickup.lng]}>
         <Popup>
           <div className="text-slate-900 font-bold">
             🚕 Pickup Location
-            <br />
-            Lat: {pickup.lat}, Lng: {pickup.lng}
+            {pickupLabel && (
+              <div className="text-xs font-normal text-slate-700 mt-1 max-w-[220px]">
+                {pickupLabel}
+              </div>
+            )}
+            <div className="text-[11px] text-slate-500 font-mono mt-1">
+              Lat: {pickup.lat}, Lng: {pickup.lng}
+            </div>
           </div>
         </Popup>
       </Marker>
@@ -111,8 +141,14 @@ function dynamicLeafletMap(
         <Popup>
           <div className="text-slate-900 font-bold">
             🏁 Destination Location
-            <br />
-            Lat: {destination.lat}, Lng: {destination.lng}
+            {destinationLabel && (
+              <div className="text-xs font-normal text-slate-700 mt-1 max-w-[220px]">
+                {destinationLabel}
+              </div>
+            )}
+            <div className="text-[11px] text-slate-500 font-mono mt-1">
+              Lat: {destination.lat}, Lng: {destination.lng}
+            </div>
           </div>
         </Popup>
       </Marker>
