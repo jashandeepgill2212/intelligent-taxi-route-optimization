@@ -16,7 +16,7 @@
 
 **Project Type:** B.Tech CSE / AI&DS Major Project
 
-**Project Presentation:** [View PPT](https://docs.google.com/presentation/d/1lRiJdChxKzSxbiDf8_JMM3HKXogoFIZ7/edit?usp=drive_link&ouid=101115675166531428876&rtpof=true&sd=true)
+**Project Presentation:** [View PPT](https://docs.google.com/presentation/d/1mTKdUKkbwyC3qNHy6JOJpoNlTdknwPvv/edit?usp=sharing&ouid=107591708491420497036&rtpof=true&sd=true)
 
 ---
 
